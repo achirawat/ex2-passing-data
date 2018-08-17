@@ -4,7 +4,7 @@ class Movies extends Component {
 
     render() {
         const {movies, users, userLikeMovies} = this.props;
-        
+        // console.log(userLikeMovies);
         return(
             <li key={movies.id}>
                 <h2>{movies.name}</h2>
