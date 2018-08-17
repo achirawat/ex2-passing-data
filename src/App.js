@@ -92,11 +92,21 @@ const movies = {
   },
 };
 
-state = {
-  
-}
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.userLikeMovies = {};
+
+    profiles.forEach(profile => {
+        const movieID = profile.favoriteMovieID;
+
+        if (this.userLikeMovies[movieID]) {
+            this.userLikeMovies[movieID].push(profile.userID);
+        } else {
+            this.userLikeMovies[movieID] = [profile.userID];
+        }
+    });
+}
   render() {
     return (
       <div className="App">
@@ -105,7 +115,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <h2>How Popular is Your Favorite Movie?</h2>
-        <Movies profiles={profiles} users={users} movies={movies}/>>
+        <Movies profiles={profiles} users={users} movies={movies} userLikeMovies={this.userLikeMovies}/>>
       </div>
     );
   }
