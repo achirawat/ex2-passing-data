@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Movies from './Movies';
+import Dashboard from './Dashboard';
 
 const profiles = [
   {
@@ -53,7 +53,7 @@ const users = {
     userName: 'user123',
   },
   4: {
-    id: 3,
+    id: 4,
     name: 'John Doe',
     userName: 'user123',
   },
@@ -115,7 +115,7 @@ class App extends Component {
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
         <h2>How Popular is Your Favorite Movie?</h2>
-        <Movies profiles={profiles} users={users} movies={movies} userLikeMovies={this.userLikeMovies}/>>
+        <Dashboard profiles={profiles} users={users} movies={movies} userLikeMovies={this.userLikeMovies}/>>
       </div>
     );
   }

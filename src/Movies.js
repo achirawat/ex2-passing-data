@@ -3,13 +3,12 @@ import React, {Component} from 'react'
 class Movies extends Component {
 
     render() {
-        const {movies, users, userLikeMovies} = this.props;
-        // console.log(userLikeMovies);
+        const {movieInfo, users, userLikeMovies} = this.props;
         return(
-            <li key={movies.id}>
-                <h2>{movies.name}</h2>
+            <li key={movieInfo.id}>
+                <h2>{movieInfo.name}</h2>
                 <p>Liked By:</p>
-                { userLikeMovies.length === 0 ?
+                { !userLikeMovies || userLikeMovies.length === 0 ?
                     (<p>None of the current users liked this movie</p>) :
                     (<ul>
                         {userLikeMovies.map(userID => {
@@ -27,4 +26,4 @@ class Movies extends Component {
     }
 }
 
-export default Movies
+export default Movies;
